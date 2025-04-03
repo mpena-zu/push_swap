@@ -14,10 +14,17 @@
 # define PUSH_SWAP_H
 # include <stdio.h>
 
-typedef struct s_stack
+typedef struct s_stack_a
 {
-    int             value;
-    struct  s_stack *next;    
-}   t_stack;
+    int               value;
+    struct  s_stack_a *next;    
+}   t_stack_a;
+
+typedef struct s_stack_b
+{
+    int               value;
+    struct  s_stack_b *next;    
+}   t_stack_b;
+void    sa(t_stack_a **stack_a);
 
 #endif

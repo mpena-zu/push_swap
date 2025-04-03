@@ -8,7 +8,10 @@ AR = ar rcs
 
 RM = rm -rf
 
-SOURCES = push_swap.c
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+SOURCES = push_swap.c move.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -18,32 +21,37 @@ RED = \033[0;31m
 YELLOW = \033[0;33m
 TOTAL_OBJ = $(words $(OBJECTS))
 
-all: $(NAME)
+all: $(LIBFT) $(NAME)
 
-$(NAME): $(OBJECTS)
-	@$(AR) $(NAME) $(OBJECTS)
+$(LIBFT):
+	@make -C $(LIBFT_DIR) --no-print-directory
+
+$(NAME): $(OBJECTS) $(LIBFT)
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) -o $(NAME)
 	@$(MAKE) -s progress
 	@echo ""
-	@echo "$(GREEN)¡Compilación completada!$(NC)"
+	@echo "$(GREEN)¡Compilación push_swap completada!$(NC)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@$(MAKE) -s progress
 
 clean:
+	@make -C $(LIBFT_DIR) clean --no-print-directory
 	@$(RM) $(OBJECTS)
-	@echo "$(YELLOW)¡Dejamos todo preparado!$(NC)"
+	@echo "$(YELLOW)¡Dejamos todo preparado para el push_swap!$(NC)"
 
 fclean:
+	@make -C $(LIBFT_DIR) fclean --no-print-directory
 	@$(RM) $(OBJECTS) $(NAME)
-	@echo "$(RED)¡Todo limpio!$(NC)"
+	@echo "$(RED)¡Todo limpio del push_swap!$(NC)"
 
 re: fclean all
 
 progress:
 	@$(eval COMPLETED = $(shell ls -1 $(OBJECTS) 2>/dev/null | wc -l))
 	@$(eval PERCENTAGE = $(shell echo "scale=2; 100 * $(COMPLETED) / $(TOTAL_OBJ)" | bc))
-	@$(eval BAR_LENGTH = 50)  # Longitud de la barra
+	@$(eval BAR_LENGTH = 50)
 	@$(eval FILLED_LENGTH = $(shell echo "$(BAR_LENGTH) * $(COMPLETED) / $(TOTAL_OBJ)" | bc))
 	@$(eval EMPTY_LENGTH = $(shell echo "$(BAR_LENGTH) - $(FILLED_LENGTH)" | bc))
 	@echo -n "$(GREEN)["
