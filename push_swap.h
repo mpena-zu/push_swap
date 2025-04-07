@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpena-zu <mpena-zu@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/03/24 13:27:04 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/07 17:37:48 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 # define PUSH_SWAP_H
 # include <stdio.h>
 
-typedef struct s_stack_a
+typedef struct s_stack
 {
-    int               value;
-    struct  s_stack_a *next;    
-}   t_stack_a;
+    int                 value;
+    struct  s_stack   *next;
+}   t_stack;
 
-typedef struct s_stack_b
-{
-    int               value;
-    struct  s_stack_b *next;    
-}   t_stack_b;
-void    sa(t_stack_a **stack_a);
+void    sa(t_stack **stack);
+void    pb(t_stack **stack, t_stack **stack_b);
+void    sb(t_stack **stack_b);
+void    ss(t_stack **stack, t_stack **stack_b);
+void    pa(t_stack **stack, t_stack **stack_b);
+void    ra(t_stack **stack);
+void    rb(t_stack **stack_b);
 
 #endif
