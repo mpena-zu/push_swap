@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:26:41 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/08 16:19:48 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/08 16:50:51 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_sorted(t_stack *stack)
 		return (1);
 	while (stack->next)
 	{
-		if (stack->value > stack->next->value)
+		if (stack->value < stack->next->value)
 			return (0);
 		stack = stack->next;
 	}
@@ -93,12 +93,12 @@ int	main(int argc, char **argv)
 		if (is_duplicate(stack) == 0)
 		{
 			printf("Error, duplicado\n");
-			return (0);
+			return (1);
 		}
 		if (is_sorted(stack) == 0)
 		{
 			printf("No esta ordenado\n");
-			return (0);
+			return (1);
 		}
 		i++;
 	}
