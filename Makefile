@@ -11,7 +11,7 @@ RM = rm -rf
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-SOURCES = push_swap.c move.c
+SOURCES = push_swap.c moves_a.c moves_b.c moves_both.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

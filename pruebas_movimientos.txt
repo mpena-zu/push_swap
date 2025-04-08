@@ -1,0 +1,191 @@
+	printf("\n");
+
+COMPROBAR SI PASAN ELEMENTOS AL STACK:
+
+    printf("El valor del argumento del stack es: %d\n", value);
+	
+SA:
+
+	printf("Antes de sa:\n");
+	print_stack(stack);
+	printf("\n");
+	
+	printf("Después de sa:\n");
+	sa(&stack);
+	print_stack(stack);
+	printf("\n");
+	
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+PB:
+	
+	printf("Antes de pb:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("Despues de pb:\n");
+	pb(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("-----------------------------------------\n");
+	printf("\n");
+	
+	printf("Después 2 de pb:\n");
+	pb(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+	printf("Después 3 de pb:\n");
+	pb(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+SB:
+	
+	printf("Antes de sb:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Después de sb:\n");
+	sb(&stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+SS:
+
+	printf("Antes de ss:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Despues de ss:\n");
+	ss(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+PA:
+
+	printf("Antes de pa:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("Despues de pa:\n");
+	pa(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+RA:
+	
+	printf("Antes de ra:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("Despues de ra:\n");
+	ra(&stack);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+RB:
+	
+	printf("Antes de rb:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+	
+	printf("Despues de rb:\n");
+	rb(&stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+RR:
+
+	printf("Antes de rr:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Despues de rr:\n");
+	rr(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+RRA:
+
+	printf("Antes de rra:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Despues de rra:\n");
+	rra(&stack);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+RRB:
+
+	printf("Antes de rrb:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Despues de rrb:\n");
+	rrb(&stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("-----------------------------------------\n");
+	printf("\n");
+
+RRR:
+
+	printf("Antes de rrr:\n");
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
+
+	printf("Despues de rrr:\n");
+	rrr(&stack, &stack_b);
+	print_stack(stack);
+	print_stack(stack_b);
+	printf("\n");
