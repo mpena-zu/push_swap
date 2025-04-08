@@ -1,8 +1,0 @@
-Movimientos hechos
-sa
-sb
-ss
-pa
-pb
-ra
-rb
