@@ -11,6 +11,9 @@ RM = rm -rf
 LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
+FT_PRINTF_DIR = ft_printf
+FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
+
 SOURCES = push_swap.c moves_a.c moves_b.c moves_both.c
 
 OBJECTS = $(SOURCES:.c=.o)
@@ -26,8 +29,11 @@ all: $(LIBFT) $(NAME)
 $(LIBFT):
 	@make -C $(LIBFT_DIR) --no-print-directory
 
-$(NAME): $(OBJECTS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) -o $(NAME)
+$(FT_PRINTF):
+	@make -C $(FT_PRINTF_DIR) --no-print-directory
+
+$(NAME): $(OBJECTS) $(LIBFT) $(FT_PRINTF)
+	@$(CC) $(CFLAGS) $(OBJECTS) $(LIBFT) $(FT_PRINTF) -o $(NAME)
 	@$(MAKE) -s progress
 	@echo ""
 	@echo "$(GREEN)¡Compilación push_swap completada!$(NC)"
@@ -38,11 +44,13 @@ $(NAME): $(OBJECTS) $(LIBFT)
 
 clean:
 	@make -C $(LIBFT_DIR) clean --no-print-directory
+	@make -C $(FT_PRINTF_DIR) clean --no-print-directory
 	@$(RM) $(OBJECTS)
 	@echo "$(YELLOW)¡Dejamos todo preparado para el push_swap!$(NC)"
 
 fclean:
 	@make -C $(LIBFT_DIR) fclean --no-print-directory
+	@make -C $(FT_PRINTF_DIR) fclean --no-print-directory
 	@$(RM) $(OBJECTS) $(NAME)
 	@echo "$(RED)¡Todo limpio del push_swap!$(NC)"
 

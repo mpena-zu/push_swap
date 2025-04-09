@@ -24,6 +24,7 @@ void	sa(t_stack **stack)
 	first_number->next = second_number->next;
 	second_number->next = first_number;
 	*stack = second_number;
+	ft_printf("sa\n");
 }
 
 void	pa(t_stack **stack, t_stack **stack_b)
@@ -36,6 +37,7 @@ void	pa(t_stack **stack, t_stack **stack_b)
 	*stack_b = first_number_b->next;
 	first_number_b->next = *stack;
 	*stack = first_number_b;
+	ft_printf("pa\n");
 }
 
 void	ra(t_stack **stack)
@@ -52,6 +54,7 @@ void	ra(t_stack **stack)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = last_number_a;
+	ft_printf("ra\n");
 }
 
 void	rra(t_stack **stack)
@@ -68,4 +71,5 @@ void	rra(t_stack **stack)
 	temp->next = NULL;
 	firs_number_a->next = *stack;
 	*stack = firs_number_a;
+	ft_printf("rra\n");
 }

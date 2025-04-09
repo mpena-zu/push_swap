@@ -32,6 +32,7 @@ void	ss(t_stack **stack, t_stack **stack_b)
 	second_number_b->next = first_number_b;
 	*stack = second_number_a;
 	*stack_b = second_number_b;
+	ft_printf("ss\n");
 }
 
 void	rr(t_stack **stack, t_stack **stack_b)
@@ -58,6 +59,7 @@ void	rr(t_stack **stack, t_stack **stack_b)
 		temp_b = temp_b->next;
 	temp_a->next = last_number_a;
 	temp_b->next = last_number_b;
+	ft_printf("rr\n");
 }
 
 void	rrr(t_stack **stack, t_stack **stack_b)
@@ -84,4 +86,5 @@ void	rrr(t_stack **stack, t_stack **stack_b)
 	first_number_b->next = *stack_b;
 	*stack = first_number_a;
 	*stack_b = first_number_b;
+	ft_printf("rrr\n");
 }

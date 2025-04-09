@@ -24,6 +24,7 @@ void	sb(t_stack **stack_b)
 	first_number->next = second_number->next;
 	second_number->next = first_number;
 	*stack_b = second_number;
+	ft_printf("sb\n");
 }
 
 void	pb(t_stack **stack, t_stack **stack_b)
@@ -36,6 +37,7 @@ void	pb(t_stack **stack, t_stack **stack_b)
 	*stack = first_number_a->next;
 	first_number_a->next = *stack_b;
 	*stack_b = first_number_a;
+	ft_printf("pb\n");
 }
 
 void	rb(t_stack **stack_b)
@@ -52,6 +54,7 @@ void	rb(t_stack **stack_b)
 	while (temp->next)
 		temp = temp->next;
 	temp->next = last_number_b;
+	ft_printf("rb\n");
 }
 
 void	rrb(t_stack **stack_b)
@@ -68,4 +71,5 @@ void	rrb(t_stack **stack_b)
 	temp->next = NULL;
 	first_number_b->next = *stack_b;
 	*stack_b = first_number_b;
+	ft_printf("rrb\n");
 }

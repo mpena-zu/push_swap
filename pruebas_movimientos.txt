@@ -7,28 +7,29 @@ COMPROBAR SI PASAN ELEMENTOS AL STACK:
 SA:
 
 	printf("Antes de sa:\n");
-	print_stack(stack);
+	print_stack_debug(stack);
 	printf("\n");
 	
 	printf("Después de sa:\n");
 	sa(&stack);
-	print_stack(stack);
+	print_stack_debug(stack);
 	printf("\n");
 	
 	printf("-----------------------------------------\n");
 	printf("\n");
 
+
 PB:
 	
-	printf("Antes de pb:\n");
-	print_stack(stack);
-	print_stack(stack_b);
+printf("Antes de pb:\n");
+	print_stack_debug(stack);
+	print_stack_debug(stack_b);
 	printf("\n");
 	
 	printf("Despues de pb:\n");
 	pb(&stack, &stack_b);
-	print_stack(stack);
-	print_stack(stack_b);
+	print_stack_debug(stack);
+	print_stack_debug(stack_b);
 	printf("\n");
 	
 	printf("-----------------------------------------\n");
@@ -36,8 +37,8 @@ PB:
 	
 	printf("Después 2 de pb:\n");
 	pb(&stack, &stack_b);
-	print_stack(stack);
-	print_stack(stack_b);
+	print_stack_debug(stack);
+	print_stack_debug(stack_b);
 	printf("\n");
 
 	printf("-----------------------------------------\n");
@@ -45,8 +46,8 @@ PB:
 
 	printf("Después 3 de pb:\n");
 	pb(&stack, &stack_b);
-	print_stack(stack);
-	print_stack(stack_b);
+	print_stack_debug(stack);
+	print_stack_debug(stack_b);
 	printf("\n");
 
 	printf("-----------------------------------------\n");

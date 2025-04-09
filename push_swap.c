@@ -11,16 +11,15 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft/libft.h"
 
-void	print_stack(t_stack *stack)
+void	print_stack_debug(t_stack *stack) // de cima a base
 {
 	while (stack != NULL)
 	{
 		printf("%d -> ", stack->value);
 		stack = stack->next;
 	}
-	printf("NULL\n");
+	ft_printf("NULL\n");
 }
 
 int	is_sorted(t_stack *stack)
@@ -57,13 +56,22 @@ int	is_duplicate(t_stack *stack)
 void	push(t_stack **stack, int value)
 {
 	t_stack	*new_node;
+	t_stack	*current;
 
 	new_node = malloc(sizeof(t_stack));
 	if (!new_node)
 		return ;
 	new_node->value = value;
-	new_node->next = *stack;
-	*stack = new_node;
+	new_node->next = NULL;
+	if (*stack == NULL)
+	{
+		*stack = new_node;
+		return ;
+	}
+	current = *stack;
+	while (current->next != NULL)
+		current = current->next;
+	current->next = new_node;
 }
 
 int	main(int argc, char **argv)
@@ -71,10 +79,10 @@ int	main(int argc, char **argv)
 	int			value;
 	int			i;
 	t_stack		*stack;
-	t_stack		*stack_b;
+	//t_stack		*stack_b;
 
 	stack = NULL;
-	stack_b = NULL;
+	//stack_b = NULL;
 	i = 1;
 	if (argc == 1)
 	{
@@ -86,20 +94,20 @@ int	main(int argc, char **argv)
 		value = ft_atoi(argv[i]);
 		if (value == 0)
 		{
-			printf("Error, letra\n");
+			ft_printf("Error, letra\n");
 			return (1);
 		}
 		push(&stack, value);
 		if (is_duplicate(stack) == 0)
 		{
-			printf("Error, duplicado\n");
-			return (1);
+			ft_printf("Error, duplicado\n");
+		//	return (1);
 		}
-		if (is_sorted(stack) == 0)
+		/* if (is_sorted(stack) == 0)
 		{
-			printf("No esta ordenado\n");
+			ft_printf("No esta ordenado\n");
 			return (1);
-		}
+		} */
 		i++;
 	}
 	return (0);
