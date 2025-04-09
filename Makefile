@@ -24,7 +24,7 @@ RED = \033[0;31m
 YELLOW = \033[0;33m
 TOTAL_OBJ = $(words $(OBJECTS))
 
-all: $(LIBFT) $(NAME)
+all: $(LIBFT) $(FT_PRINTF) $(NAME)
 
 $(LIBFT):
 	@make -C $(LIBFT_DIR) --no-print-directory
