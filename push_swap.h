@@ -15,6 +15,7 @@
 # include <stdio.h>
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -33,5 +34,6 @@ void				rr(t_stack **stack, t_stack **stack_b);
 void				rra(t_stack **stack);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack, t_stack **stack_b);
+long				ft_atol(const char *nptr);
 
 #endif
