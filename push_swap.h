@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/08 15:29:28 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/12 15:31:44 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,12 @@ void				rra(t_stack **stack);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack, t_stack **stack_b);
 long				ft_atol(const char *nptr);
+int					is_sorted(t_stack *stack);
+int					check_long(long value);
+int					is_duplicate(t_stack *stack);
+int					is_number(const char *str);
+void				push(t_stack **stack, int value);
+int					check_split(char *argv, t_stack **stack);
+void				init(t_stack **stack, int i);
 
 #endif

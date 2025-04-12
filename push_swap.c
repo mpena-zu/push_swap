@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:26:41 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/08 16:50:51 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/12 16:13:05 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ void	print_stack_debug(t_stack *stack)
 	ft_printf("NULL\n");
 }
 
+int	count_argc(t_stack *stack)
+{
+	int		cont;
+
+	if(!stack)
+		return (0);
+	cont = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		cont++;
+	}
+	return (cont);
+}
+
 int	check_long(long value)
 {
 	if (value < -2147483648 || value > 2147483647)
@@ -35,7 +50,7 @@ int	is_sorted(t_stack *stack)
 		return (1);
 	while (stack->next)
 	{
-		if (stack->value < stack->next->value)
+		if (stack->value > stack->next->value)
 			return (0);
 		stack = stack->next;
 	}
@@ -105,7 +120,7 @@ int	check_split(char *argv, t_stack **stack)
 	int		i;
 	long	value;
 
-	if (argv == NULL || *argv == '\0' || (argv[0] == ' ' && ft_strlen(argv) == 1))
+	if (!argv || *argv == '\0' || (argv[0] == ' ' && ft_strlen(argv) == 1))
 		return (1);
 	words = ft_split(argv, ' ');
 	i = 0;
@@ -114,17 +129,11 @@ int	check_split(char *argv, t_stack **stack)
 		while (words[i] != NULL)
 		{
 			value = ft_atol(words[i]);
-			if (!check_long(value))
-			{
-				ft_printf("Error, numero grande\n"); //puedo juntarlo con el de abajo
+			if (!check_long(value) || !is_number(words[i]))
 				return (1);
-			}
-			if (!is_number(words[i]))
-			{
-				ft_printf("Error, no es numero\n"); //esto luego hay que quitarlo
-				return (1);
-			}
 			push(stack, value);
+			if (is_duplicate(*stack) == 0)
+				return (1);
 			i++;
 		}
 	}
@@ -149,18 +158,12 @@ int	main(int argc, char **argv)
 			ft_printf("Error\n");
 			return (1);
 		}
-		if (is_duplicate(stack) == 0)
-		{
-			ft_printf("Error, duplicado\n");
-			return (1);
-		}
-		/*if (is_sorted(stack) == 0)
-		{
-			ft_printf("No esta ordenado\n");
-			return (1);
-		} */
 		i++;
 	}
-	print_stack_debug(stack);
+	i = count_argc(stack);
+	//ft_printf("%d\n", i);
+	init(&stack, i);
+	//print_stack_debug(stack);
+	//print_stack_debug(stack_b);
 	return (0);
 }
