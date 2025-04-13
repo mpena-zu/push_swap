@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:26:41 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/12 16:13:05 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/13 18:53:49 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,10 +144,10 @@ int	main(int argc, char **argv)
 {
 	int			i;
 	t_stack		*stack;
-	//t_stack		*stack_b;
+	t_stack		*stack_b;
 
 	stack = NULL;
-	//stack_b = NULL;
+	stack_b = NULL;
 	i = 1;
 	if (argc == 1)
 		return (0);
@@ -162,8 +162,8 @@ int	main(int argc, char **argv)
 	}
 	i = count_argc(stack);
 	//ft_printf("%d\n", i);
-	init(&stack, i);
-	//print_stack_debug(stack);
-	//print_stack_debug(stack_b);
+	init(&stack, &stack_b, i);
+	print_stack_debug(stack);
+	print_stack_debug(stack_b);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/12 15:31:44 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/13 19:00:56 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int					is_duplicate(t_stack *stack);
 int					is_number(const char *str);
 void				push(t_stack **stack, int value);
 int					check_split(char *argv, t_stack **stack);
-void				init(t_stack **stack, int i);
+void				init(t_stack **stack, t_stack **stack_b, int i);
+int					count_argc(t_stack *stack);
+void				get_first_min(t_stack **stack, t_stack **stack_b);
 
 #endif
