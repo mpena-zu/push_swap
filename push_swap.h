@@ -6,16 +6,16 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/13 19:00:56 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:22:21 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdio.h>
-# include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
+# include "libft/libft.h"
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {

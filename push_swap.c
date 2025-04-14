@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:26:41 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/13 18:53:49 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:56:22 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	print_stack_debug(t_stack *stack)
 
 int	count_argc(t_stack *stack)
 {
-	int		cont;
+	int	cont;
 
-	if(!stack)
+	if (!stack)
 		return (0);
 	cont = 0;
 	while (stack)
@@ -59,7 +59,7 @@ int	is_sorted(t_stack *stack)
 
 int	is_duplicate(t_stack *stack)
 {
-	t_stack		*temp;
+	t_stack	*temp;
 
 	while (stack)
 	{
@@ -75,7 +75,7 @@ int	is_duplicate(t_stack *stack)
 	return (1);
 }
 
-int		is_number(const char *str)
+int	is_number(const char *str)
 {
 	int	i;
 
@@ -142,9 +142,9 @@ int	check_split(char *argv, t_stack **stack)
 
 int	main(int argc, char **argv)
 {
-	int			i;
-	t_stack		*stack;
-	t_stack		*stack_b;
+	int		i;
+	t_stack	*stack;
+	t_stack	*stack_b;
 
 	stack = NULL;
 	stack_b = NULL;
@@ -161,9 +161,8 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	i = count_argc(stack);
-	//ft_printf("%d\n", i);
 	init(&stack, &stack_b, i);
-	print_stack_debug(stack);
-	print_stack_debug(stack_b);
+	//print_stack_debug(stack);
+	//print_stack_debug(stack_b);
 	return (0);
 }

@@ -6,15 +6,21 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:59:58 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/13 19:12:14 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/14 16:58:40 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	get_position(t_stack **stack, t_stack **stack_b, int min)
 {
 	while ((*stack)->value != min)
-		ra(stack);
+	{
+		if ((*stack)->next->value == min || (*stack)->next->next->value == min)
+			ra(stack);
+		else
+			rra(stack);
+	}
 	pb(stack, stack_b);
 	if (count_argc(*stack) != 3)
 		get_first_min(stack, stack_b);
@@ -22,8 +28,8 @@ void	get_position(t_stack **stack, t_stack **stack_b, int min)
 
 void	get_first_min(t_stack **stack, t_stack **stack_b)
 {
-	int			min;
-	t_stack		*temp;
+	int		min;
+	t_stack	*temp;
 
 	min = (*stack)->value;
 	temp = (*stack);
@@ -38,9 +44,9 @@ void	get_first_min(t_stack **stack, t_stack **stack_b)
 
 void	sort_three_stack(t_stack **stack)
 {
-	int		first;
-	int		second;
-	int		third;
+	int	first;
+	int	second;
+	int	third;
 
 	if (!*stack || !(*stack)->next || !(*stack)->next->next)
 		return ;
@@ -65,9 +71,31 @@ void	sort_three_stack(t_stack **stack)
 		ra(stack);
 }
 
-void    init(t_stack **stack, t_stack **stack_b, int i)
+/* int		sort_array(t_stack **stack)
 {
-	if(!is_sorted(*stack))
+	int		i;
+	int		*temp;
+	
+	temp = malloc(stack) * sizeof(int);
+	if (!temp)
+		return (NULL);
+	i = 0;
+	while ((*stack))
+	{
+		temp[i] = (*stack)->value;
+		i++;
+		*stack = (*stack)->next;
+	}
+	return (temp);
+}
+void	sort_big(t_stack **stack, t_stack **stack_b)
+{
+	sort_array(stack);
+} */
+
+void	init(t_stack **stack, t_stack **stack_b, int i)
+{
+	if (!is_sorted(*stack))
 	{
 		if (i == 2)
 			sa(stack);

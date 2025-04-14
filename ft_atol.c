@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mpena-zu <mpena-zu@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 18:12:02 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/01/28 20:28:38 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/14 13:22:05 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 long	ft_atol(const char *nptr)
 {
-	int 	i;
+	int		i;
 	long	result;
-	int 	sign;
+	int		sign;
 
 	i = 0;
 	result = 0;
 	sign = 1;
 	while (nptr[i] == '\t' || nptr[i] == ' ' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr [i] == '\f')
+		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
