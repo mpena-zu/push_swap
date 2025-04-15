@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/14 13:22:21 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:14:04 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ int					check_split(char *argv, t_stack **stack);
 void				init(t_stack **stack, t_stack **stack_b, int i);
 int					count_argc(t_stack *stack);
 void				get_first_min(t_stack **stack, t_stack **stack_b);
+int					*make_array(t_stack *stack, int size);
+void				sort_big(t_stack **stack, t_stack **stack_b);
 
 #endif

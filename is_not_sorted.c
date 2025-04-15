@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:59:58 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/14 16:58:40 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/15 16:16:22 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@ void	get_position(t_stack **stack, t_stack **stack_b, int min)
 			ra(stack);
 		else
 			rra(stack);
-	}
-	pb(stack, stack_b);
-	if (count_argc(*stack) != 3)
+	}	
+	if (count_argc(*stack) != 3 && !is_sorted(*stack))
+	{
+		pb(stack, stack_b);
 		get_first_min(stack, stack_b);
+	}
 }
 
 void	get_first_min(t_stack **stack, t_stack **stack_b)
@@ -71,27 +73,71 @@ void	sort_three_stack(t_stack **stack)
 		ra(stack);
 }
 
-/* int		sort_array(t_stack **stack)
+void		sort_array(int	*array, int	size)
+{
+	int	i;
+	int	temp;
+	int	is_swapped;
+
+	is_swapped = 1;
+	while (is_swapped)
+	{
+		is_swapped = 0;
+		i = 0;
+		while (i < size - 1)
+		{
+			if (array[i] > array[i + 1])
+			{
+				temp = array[i];
+				array[i] = array [i + 1];
+				array[i + 1] = temp;
+				is_swapped = 1;
+			}
+			i++;
+		}
+	}
+}
+
+int		*make_array(t_stack *stack, int size)
 {
 	int		i;
-	int		*temp;
-	
-	temp = malloc(stack) * sizeof(int);
-	if (!temp)
-		return (NULL);
+	int		*array;
+	t_stack	*temp;
+
 	i = 0;
-	while ((*stack))
+	array = malloc(sizeof(int) * size);
+	if (!array)
+		return (NULL);
+	temp = stack;
+	while (temp)
 	{
-		temp[i] = (*stack)->value;
+		array[i] = temp->value;
+		temp = temp->next;
 		i++;
-		*stack = (*stack)->next;
 	}
-	return (temp);
+	sort_array(array, size);
+	return (array);
 }
 void	sort_big(t_stack **stack, t_stack **stack_b)
 {
-	sort_array(stack);
-} */
+	int	*array;
+	int	num_chunks;
+	int	chunks_size;
+	int	rest;
+	int	size;
+	int	i = 0;
+
+	(void)stack_b;
+	size = count_argc(*stack);
+	num_chunks = 5;
+	i = 0;
+	chunks_size = size / num_chunks;
+	rest = size % num_chunks;
+	array = make_array(*stack, size);
+	while (i < chunks_size)
+	{
+	}
+}
 
 void	init(t_stack **stack, t_stack **stack_b, int i)
 {
