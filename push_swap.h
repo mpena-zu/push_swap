@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/17 12:35:59 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/17 13:52:18 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,6 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 }					t_stack;
-
-typedef struct s_cost
-{
-	int				cost_a;
-	int				cost_b;
-	t_stack			*node;
-}					t_cost;
 
 void				sa(t_stack **stack);
 void				pb(t_stack **stack, t_stack **stack_b);
