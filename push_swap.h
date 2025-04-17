@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/16 14:06:02 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:35:59 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ int					count_argc(t_stack *stack);
 void				get_first_min(t_stack **stack, t_stack **stack_b);
 void				sort_big(t_stack **stack, t_stack **stack_b);
 void				sort_three_stack(t_stack **stack);
+
+
+void	print_stack_debug(t_stack *stack); //luego quitar esto
 
 #endif

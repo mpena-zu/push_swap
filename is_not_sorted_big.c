@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 13:34:49 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/16 18:18:24 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:46:09 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,38 @@ int		get_first_min_to_stackb(t_stack **stack_b)
 	return (min);
 }
 
+int		get_max_stack(t_stack **stack)
+{
+	int		max;
+	t_stack	*temp;
+	
+	max = (*stack)->value;
+	temp = (*stack);
+	while (temp)
+	{
+		if (temp->value > max)
+			max = temp->value;
+		temp = temp->next;
+	}
+	return (max);
+}
+
 void	move_to_stack_b(t_stack **stack, t_stack **stack_b)
 {
 	int	size;
+	int	max;
 
 	size = count_argc(*stack);
+	max = get_max_stack(stack);
 	while (size > 3)
 	{
+		if ((*stack)->value == max)
+			ra(stack);
 		pb(stack, stack_b);
 		size--;
 	}
-	sort_three_stack(stack);
+	if (!is_sorted(*stack))
+		sort_three_stack(stack);
 }
 
 void	sort_big(t_stack **stack, t_stack **stack_b)

@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:59:58 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/16 14:00:44 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/17 12:43:59 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	sort_three_stack(t_stack **stack)
 		sa(stack);
 		ra(stack);
 	}
-	else
+	else if (first > second && second < third)
 		ra(stack);
 }
 
