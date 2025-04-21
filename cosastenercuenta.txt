@@ -1,7 +1,0 @@
-Repetidos
-ft_atol (si es > int_max o < innt_min error)
-45 23 "17" '1 3 18'  --> ./checker_linux 45 23 "17" '1 3 18'
-1er paso: concatenar con strjoin y añadir espacios entre joins
-2º paso: split
-3º paso: ft_atol para comprobar que los numeros sean enteros validos
-3º paso: comprobar que no haya duplicados

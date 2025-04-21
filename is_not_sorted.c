@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 13:59:58 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/17 12:43:59 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/21 16:07:36 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,6 @@ void	init(t_stack **stack, t_stack **stack_b, int i)
 				pa(stack, stack_b);
 		}
 		else
-			sort_big(stack, stack_b);
-	}
+			sort_stacks(stack, stack_b);
+		}
 }
