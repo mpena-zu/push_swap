@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:25:45 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 22:42:06 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 23:24:24 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	final_check(t_stack **stack, t_stack **stack_b)
 {
-	if(is_sorted(*stack))
+	if (is_sorted(*stack))
 		ft_printf("OK\n");
 	else
 		ft_printf("KO\n");
