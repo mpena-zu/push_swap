@@ -21,14 +21,15 @@ FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 SOURCES = push_swap.c moves_a.c moves_b.c moves_both.c rules.c is_not_sorted.c \
 			cost.c init_nodes.c main.c moves_big.c sort_stacks.c utils_stack.c
 
-BONUS_SOURCES = $(BONUS_DIR)/checker.c \
+BONUS_SOURCES = $(BONUS_DIR)/checker_utils.c \
 			$(BONUS_DIR)/push_swap_bonus.c \
 			$(BONUS_DIR)/rules_bonus.c \
 			$(BONUS_DIR)/utils_stack_bonus.c \
 			$(BONUS_DIR)/moves_a_bonus.c \
 			$(BONUS_DIR)/moves_b_bonus.c \
 			$(BONUS_DIR)/moves_both_bonus.c \
-			$(BONUS_DIR)/get_next_line.c
+			$(BONUS_DIR)/get_next_line.c \
+			$(BONUS_DIR)/main_checker.c
 
 OBJECTS = $(SOURCES:.c=.o)
 
@@ -62,7 +63,7 @@ $(BONUS_NAME): $(BONUS_OBJECTS) $(LIBFT) $(FT_PRINTF)
 	@$(CC) $(CFLAGS) $(BONUS_OBJECTS) $(LIBFT) $(FT_PRINTF) -o $(BONUS_NAME)
 	@$(MAKE) -s progress TOTAL_OBJ=$(TOTAL_BONUS_OBJ) OBJECTS="$(BONUS_OBJECTS)"
 	@echo ""
-	@echo "$(GREEN) ¡Compilación del checker completada!$(NC)"
+	@echo "$(GREEN)¡Compilación del checker completada!$(NC)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -78,8 +79,6 @@ clean:
 	@echo "$(YELLOW)¡Dejamos todo preparado para el push_swap!$(NC)"
 
 clean_bonus:
-	@make -C $(LIBFT_DIR) clean --no-print-directory
-	@make -C $(FT_PRINTF_DIR) clean --no-print-directory
 	@$(RM) $(BONUS_OBJECTS)
 	@echo "$(YELLOW)¡Dejamos todo preparado para el checker!$(NC)"
 
@@ -90,8 +89,6 @@ fclean:
 	@echo "$(RED)¡Todo limpio del push_swap!$(NC)"
 
 fclean_bonus:
-	@make -C $(LIBFT_DIR) fclean --no-print-directory
-	@make -C $(FT_PRINTF_DIR) fclean --no-print-directory
 	@$(RM) $(BONUS_OBJECTS) $(BONUS_NAME)
 	@echo "$(RED)¡Todo limpio del checker!$(NC)"
 

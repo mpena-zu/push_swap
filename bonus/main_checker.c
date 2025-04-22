@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   main_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/20 18:12:02 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/14 13:22:05 by mpena-zu         ###   ########.fr       */
+/*   Created: 2025/04/22 21:57:31 by mpena-zu          #+#    #+#             */
+/*   Updated: 2025/04/22 22:42:34 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-long	ft_atol(const char *nptr)
+int	main(int argc, char **argv)
 {
 	int		i;
-	long	result;
-	int		sign;
+	char	*line;
+	t_stack	*stack;
+	t_stack	*stack_b;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while (nptr[i] == '\t' || nptr[i] == ' ' || nptr[i] == '\n'
-		|| nptr[i] == '\r' || nptr[i] == '\v' || nptr[i] == '\f')
-		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	stack = NULL;
+	stack_b = NULL;
+	i = 1;
+	if (argc == 1)
+		return (0);
+    while (i < argc)
 	{
-		if (nptr[i] == '-')
-			sign = -sign;
+		if (check_split(argv[i], &stack))
+			return (ft_printf("Error\n"), 1);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
+	line = get_next_line(0);
+	while (line != NULL)
 	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
+		read_input(&stack, &stack_b, line);
+		free(line);
+		line = get_next_line(0);
 	}
-	return (result * sign);
+	final_check(&stack, &stack_b);
+	return (0);
 }

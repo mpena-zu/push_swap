@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:25:59 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 16:34:21 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 22:00:24 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int					is_sorted(t_stack *stack);
 int					is_duplicate(t_stack *stack);
 int					is_number(const char *str);
 void				push(t_stack **stack, int value);
-void	print_stack_debug(t_stack *stack);
+void    read_input(t_stack **stack, t_stack **stack_b, char *line);
 void				sa(t_stack **stack);
 void				pb(t_stack **stack, t_stack **stack_b);
 void				sb(t_stack **stack_b);
@@ -44,5 +44,7 @@ void				rra(t_stack **stack);
 void				rrb(t_stack **stack_b);
 void				rrr(t_stack **stack, t_stack **stack_b);
 char	*get_next_line(int fd);
+void	final_check(t_stack **stack, t_stack **stack_b);
+void	check_error(t_stack **stack, t_stack **stack_b);
 
 #endif
