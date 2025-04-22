@@ -6,16 +6,16 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:12:42 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 11:13:11 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:23:25 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rev_rotate_both(t_stack **stack,t_stack **stack_b, t_stack *cheapest_node)
+void	rev_rotate_both(t_stack **stack, t_stack **stack_b,
+		t_stack *cheapest_node)
 {
-	while (*stack_b != cheapest_node->target_node
-		&& *stack != cheapest_node)
+	while (*stack_b != cheapest_node->target_node && *stack != cheapest_node)
 		rrr(stack, stack_b);
 	current_index(*stack);
 	current_index(*stack_b);

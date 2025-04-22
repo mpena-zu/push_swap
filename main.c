@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:26:25 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 12:15:45 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:20:19 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	}
 	i = count_argc(stack);
 	init(&stack, &stack_b, i);
-    free_stacks(&stack);
-    free_stacks(&stack_b);
+	free_stacks(&stack);
+	free_stacks(&stack_b);
 	return (0);
 }

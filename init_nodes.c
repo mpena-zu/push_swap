@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 11:05:27 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 11:08:22 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:23:17 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	current_index(t_stack *stack)
 	if (!stack)
 		return ;
 	median = count_argc(stack) / 2;
-	while (stack) 
+	while (stack)
 	{
 		stack->index = i;
 		if (i <= median)
@@ -38,6 +38,7 @@ void	set_target_a(t_stack *stack, t_stack *stack_b)
 	t_stack	*current_b;
 	t_stack	*target_node;
 	long	best_match_index;
+
 	while (stack)
 	{
 		best_match_index = LONG_MIN;
@@ -62,9 +63,9 @@ void	set_target_a(t_stack *stack, t_stack *stack_b)
 
 void	set_target_b(t_stack *stack, t_stack *stack_b)
 {
-	t_stack		*current_a;
-	t_stack		*target_node;
-	long		best_match_index;
+	t_stack	*current_a;
+	t_stack	*target_node;
+	long	best_match_index;
 
 	while (stack_b)
 	{
@@ -87,6 +88,7 @@ void	set_target_b(t_stack *stack, t_stack *stack_b)
 		stack_b = stack_b->next;
 	}
 }
+
 void	init_nodes_a(t_stack *stack, t_stack *stack_b)
 {
 	current_index(stack);
@@ -102,4 +104,3 @@ void	init_nodes_b(t_stack *stack, t_stack *stack_b)
 	current_index(stack_b);
 	set_target_b(stack, stack_b);
 }
-

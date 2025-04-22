@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 12:16:02 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 14:21:46 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include "ft_printf/ft_printf.h"
 # include "libft/libft.h"
 # include <limits.h>
-# include <stdio.h>
 # include <stdbool.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -52,25 +52,28 @@ void				init(t_stack **stack, t_stack **stack_b, int i);
 int					count_argc(t_stack *stack);
 void				get_first_min(t_stack **stack, t_stack **stack_b);
 void				sort_three_stack(t_stack **stack);
-void	free_stacks(t_stack **stack);
-void	free_words(char **words);
+void				free_stacks(t_stack **stack);
+void				free_words(char **words);
 
-void	sort_stacks(t_stack **stack, t_stack **stack_b);
-t_stack	*get_cheapest(t_stack *stack);
-void	rev_rotate_both(t_stack **stack,t_stack **stack_b, t_stack *cheapest_node);
-void	current_index(t_stack *stack);
-void	set_target_a(t_stack *stack, t_stack *stack_b);
-void	cost_analysis_a(t_stack *stack, t_stack *stack_b);
-void	set_cheapest(t_stack *stack);
-void	init_nodes_a(t_stack *stack, t_stack *stack_b);
-void	rotate_both(t_stack **stack, t_stack **stack_b, t_stack *cheapest_node);
-void	move_a_to_b(t_stack **stack, t_stack **stack_b);
-void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_name);
-void	move_b_to_a(t_stack **stack, t_stack **stack_b);
-void	min_on_top(t_stack **stack);
-void	set_target_b(t_stack *stack, t_stack *stack_b);
-void	init_nodes_b(t_stack *stack, t_stack *stack_b);
-t_stack	*find_min(t_stack *stack);
-t_stack	*find_max(t_stack *stack);
+void				sort_stacks(t_stack **stack, t_stack **stack_b);
+t_stack				*get_cheapest(t_stack *stack);
+void				rev_rotate_both(t_stack **stack, t_stack **stack_b,
+						t_stack *cheapest_node);
+void				current_index(t_stack *stack);
+void				set_target_a(t_stack *stack, t_stack *stack_b);
+void				cost_analysis_a(t_stack *stack, t_stack *stack_b);
+void				set_cheapest(t_stack *stack);
+void				init_nodes_a(t_stack *stack, t_stack *stack_b);
+void				rotate_both(t_stack **stack, t_stack **stack_b,
+						t_stack *cheapest_node);
+void				move_a_to_b(t_stack **stack, t_stack **stack_b);
+void				prep_for_push(t_stack **stack, t_stack *top_node,
+						char stack_name);
+void				move_b_to_a(t_stack **stack, t_stack **stack_b);
+void				min_on_top(t_stack **stack);
+void				set_target_b(t_stack *stack, t_stack *stack_b);
+void				init_nodes_b(t_stack *stack, t_stack *stack_b);
+t_stack				*find_min(t_stack *stack);
+t_stack				*find_max(t_stack *stack);
 
 #endif
