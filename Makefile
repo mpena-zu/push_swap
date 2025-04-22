@@ -14,7 +14,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 FT_PRINTF_DIR = ft_printf
 FT_PRINTF = $(FT_PRINTF_DIR)/libftprintf.a
 
-SOURCES = push_swap.c moves_a.c moves_b.c moves_both.c ft_atol.c is_not_sorted.c is_not_sorted_big.c new_metod.c
+SOURCES = push_swap.c moves_a.c moves_b.c moves_both.c rules.c is_not_sorted.c cost.c init_nodes.c main.c moves_big.c sort_stacks.c utils_stack.c
 
 OBJECTS = $(SOURCES:.c=.o)
 

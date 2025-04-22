@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 13:27:01 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/21 16:25:16 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/22 12:16:02 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ int					check_split(char *argv, t_stack **stack);
 void				init(t_stack **stack, t_stack **stack_b, int i);
 int					count_argc(t_stack *stack);
 void				get_first_min(t_stack **stack, t_stack **stack_b);
-void				sort_big(t_stack **stack, t_stack **stack_b);
 void				sort_three_stack(t_stack **stack);
-int					get_max_stack(t_stack *stack);
+void	free_stacks(t_stack **stack);
+void	free_words(char **words);
 
 void	sort_stacks(t_stack **stack, t_stack **stack_b);
 t_stack	*get_cheapest(t_stack *stack);
@@ -72,7 +72,5 @@ void	set_target_b(t_stack *stack, t_stack *stack_b);
 void	init_nodes_b(t_stack *stack, t_stack *stack_b);
 t_stack	*find_min(t_stack *stack);
 t_stack	*find_max(t_stack *stack);
-
-void	print_stack_debug(t_stack *stack); //luego quitar esto
 
 #endif
