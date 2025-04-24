@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:25:59 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 23:25:10 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:01:07 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int					is_sorted(t_stack *stack);
 int					is_duplicate(t_stack *stack);
 int					is_number(const char *str);
 void				push(t_stack **stack, int value);
-void   				read_input(t_stack **stack, t_stack **stack_b, char *line);
+void				read_input(t_stack **stack, t_stack **stack_b, char *line);
 void				sa(t_stack **stack);
 void				pb(t_stack **stack, t_stack **stack_b);
 void				sb(t_stack **stack_b);

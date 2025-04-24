@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 14:25:45 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 23:24:24 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:01:02 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_error(t_stack **stack, t_stack **stack_b)
 	exit(1);
 }
 
-void    read_input(t_stack **stack, t_stack **stack_b, char *line)
+void	read_input(t_stack **stack, t_stack **stack_b, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
 		sa(stack);

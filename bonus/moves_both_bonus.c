@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:47:59 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 16:36:33 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:02:19 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ss(t_stack **stack, t_stack **stack_b)
 {
-	t_stack		*first_number_a;
-	t_stack		*second_number_a;
-	t_stack		*first_number_b;
-	t_stack		*second_number_b;
+	t_stack	*first_number_a;
+	t_stack	*second_number_a;
+	t_stack	*first_number_b;
+	t_stack	*second_number_b;
 
 	if (*stack == NULL || (*stack)->next == NULL || *stack_b == NULL
 		|| (*stack_b)->next == NULL)
@@ -62,10 +62,10 @@ void	rr(t_stack **stack, t_stack **stack_b)
 
 void	rrr(t_stack **stack, t_stack **stack_b)
 {
-	t_stack		*first_number_a;
-	t_stack		*first_number_b;
-	t_stack		*temp_a;
-	t_stack		*temp_b;
+	t_stack	*first_number_a;
+	t_stack	*first_number_b;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
 	if (*stack == NULL || (*stack)->next == NULL || *stack_b == NULL
 		|| (*stack_b)->next == NULL)

@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:47:03 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 16:36:09 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:01:29 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	rb(t_stack **stack_b)
 
 void	rrb(t_stack **stack_b)
 {
-	t_stack		*first_number_b;
-	t_stack		*temp;
+	t_stack	*first_number_b;
+	t_stack	*temp;
 
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:57:31 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 22:42:34 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:01:15 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char **argv)
 	i = 1;
 	if (argc == 1)
 		return (0);
-    while (i < argc)
+	while (i < argc)
 	{
 		if (check_split(argv[i], &stack))
 			return (ft_printf("Error\n"), 1);

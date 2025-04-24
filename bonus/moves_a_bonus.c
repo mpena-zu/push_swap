@@ -6,7 +6,7 @@
 /*   By: mpena-zu <mpena-zu@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:46:04 by mpena-zu          #+#    #+#             */
-/*   Updated: 2025/04/22 16:36:21 by mpena-zu         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:02:06 by mpena-zu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ void	ra(t_stack **stack)
 
 void	rra(t_stack **stack)
 {
-	t_stack		*firs_number_a;
-	t_stack		*temp;
+	t_stack	*firs_number_a;
+	t_stack	*temp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
